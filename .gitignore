@@ -35,6 +35,8 @@ build/test-driver
 missing
 pam_yubico-*.tar.gz
 pam_yubico-*.tar.gz.sig
+pam_yubico-*.tar.xz
+pam_yubico-*.tar.xz.sig
 pam_yubico-*.pkg
 pam_yubico.8
 ykpamcfg.1

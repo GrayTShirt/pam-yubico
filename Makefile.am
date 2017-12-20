@@ -66,7 +66,7 @@ dist_man8_MANS = man/pam_yubico.8
 DISTCLEANFILES = $(dist_man1_MANS) $(dist_man8_MANS)
 
 MANSOURCES = man/pam_yubico.8.txt man/ykpamcfg.1.txt
-EXTRA_DIST = doc/Authentication_Using_Challenge-Response.adoc doc/MacOS_X_Challenge-Response.adoc doc/Two_Factor_PAM_Configuration.adoc doc/Ubuntu_FreeRadius_YubiKey.adoc doc/YubiKey_and_FreeRADIUS_1FA_via_PAM.adoc doc/YubiKey_and_FreeRADIUS_via_PAM.adoc doc/YubiKey_and_OpenVPN_via_PAM.adoc doc/Yubikey_and_Radius_via_PAM.adoc doc/Yubikey_and_SELinux_on_Fedora_18_and_up.adoc doc/Yubikey_and_SSH_via_PAM.adoc
+EXTRA_DIST = doc/Authentication_Using_Challenge-Response.md doc/MacOS_X_Challenge-Response.md doc/Two_Factor_PAM_Configuration.md doc/Ubuntu_FreeRadius_YubiKey.md doc/YubiKey_and_FreeRADIUS_1FA_via_PAM.md doc/YubiKey_and_FreeRADIUS_via_PAM.md doc/YubiKey_and_OpenVPN_via_PAM.md doc/Yubikey_and_Radius_via_PAM.md doc/Yubikey_and_SELinux_on_Fedora_18_and_up.md doc/Yubikey_and_SSH_via_PAM.md
 EXTRA_DIST += $(MANSOURCES)
 EXTRA_DIST += tests/aux/ykval.pl tests/aux/ldap.pl tests/aux/authfile
 
@@ -111,7 +111,7 @@ endif
 # Release
 
 check-doc-dist:
-	perl -pe "s,^EXTRA_DIST = .*,EXTRA_DIST = `cd $(srcdir) && ls doc/*.adoc | xargs echo`," < $(srcdir)/Makefile.am > check-doc-dist.tmp
+	perl -pe "s,^EXTRA_DIST = .*,EXTRA_DIST = `cd $(srcdir) && ls doc/*.md | xargs echo`," < $(srcdir)/Makefile.am > check-doc-dist.tmp
 	diff -ur $(srcdir)/Makefile.am check-doc-dist.tmp || \
 		(rm -f check-doc-dist.tmp; echo 'error: please update $(srcdir)/Makefile.am to include all docs'; exit 1)
 	rm -f check-doc-dist.tmp
