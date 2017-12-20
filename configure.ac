@@ -27,8 +27,8 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 AC_INIT([pam_yubico], [2.25])
-AC_CONFIG_AUX_DIR([build-aux])
-AC_CONFIG_MACRO_DIR([m4])
+AC_CONFIG_AUX_DIR([build])
+AC_CONFIG_MACRO_DIR([build])
 AM_INIT_AUTOMAKE([1.11 subdir-objects foreign -Wall -Werror])
 AM_SILENT_RULES([yes])
 AM_PROG_CC_C_O
@@ -55,7 +55,7 @@ AC_ARG_WITH([ldap],
               [disable support for ldap])],
             [],
             [with_ldap=yes])
-          
+
           LIBLDAP=
           AS_IF([test "x$with_ldap" != xno],
             [AC_CHECK_LIB([ldap], [ldap_init],

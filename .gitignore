@@ -25,6 +25,14 @@ m4/ltoptions.m4
 m4/ltsugar.m4
 m4/ltversion.m4
 m4/lt~obsolete.m4
+build/ar-lib
+build/compile
+build/libtool.m4
+build/ltoptions.m4
+build/ltsugar.m4
+build/ltversion.m4
+build/lt~obsolete.m4
+build/test-driver
 missing
 pam_yubico-*.tar.gz
 pam_yubico-*.tar.gz.sig
