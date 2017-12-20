@@ -2,7 +2,6 @@
 .*~
 .deps/
 .libs/
-ChangeLog
 INSTALL
 Makefile
 Makefile.in

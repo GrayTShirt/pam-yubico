@@ -110,9 +110,6 @@ endif
 
 # Release
 
-ChangeLog:
-	cd $(srcdir) && git2cl > ChangeLog
-
 check-doc-dist:
 	perl -pe "s,^EXTRA_DIST = .*,EXTRA_DIST = `cd $(srcdir) && ls doc/*.adoc | xargs echo`," < $(srcdir)/Makefile.am > check-doc-dist.tmp
 	diff -ur $(srcdir)/Makefile.am check-doc-dist.tmp || \

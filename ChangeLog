@@ -1,0 +1,8 @@
+-------------------------------------------
+Version 2.26.0 2018-01-01
+- A new fork and a new maintainer
+  Dan Molik <dan@danmolik.com>
+- Use markdown ext instead of adoc
+- Combining build macros into single dir
+- linux syntax (indent -linux)
+- subdir building

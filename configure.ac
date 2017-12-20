@@ -41,20 +41,20 @@ AC_PROG_LIBTOOL
 AM_MISSING_PROG([A2X], a2x, $missing_dir)
 
 AC_CHECK_HEADERS([security/pam_appl.h], [],
-  [AC_MSG_ERROR([[PAM header files not found, install libpam-dev.]])])
+	[AC_MSG_ERROR([[PAM header files not found, install libpam-dev.]])])
 AC_CHECK_HEADERS([security/pam_modules.h security/_pam_macros.h security/pam_modutil.h], [], [],
-  [#include <sys/types.h>
-   #include <security/pam_appl.h>])
+	[#include <sys/types.h>
+	 #include <security/pam_appl.h>])
 
 AC_CHECK_LIB([pam], [pam_start], [AC_SUBST([LIBPAM], ["-lpam"])])
 
 AC_SEARCH_LIBS([pam_modutil_drop_priv], ["pam"], [AC_DEFINE([HAVE_PAM_MODUTIL_DROP_PRIV], [1])])
 
 AC_ARG_WITH([ldap],
-            [AS_HELP_STRING([--without-ldap],
-              [disable support for ldap])],
-            [],
-            [with_ldap=yes])
+	[AS_HELP_STRING([--without-ldap],
+		[disable support for ldap])],
+	[],
+	[with_ldap=yes])
 
           LIBLDAP=
           AS_IF([test "x$with_ldap" != xno],
